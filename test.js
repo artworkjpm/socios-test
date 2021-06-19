@@ -8,4 +8,4 @@ function monthFormat(numberToCheck) {
 	}
 }
 
-monthFormat(-1, "month");
+monthFormat(-1);
