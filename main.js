@@ -35,21 +35,39 @@ function outputDate(dates) {
 
 function loopDates(arrayOfDates) {
 	arrayOfDates.forEach((item) => {
-		console.log(item[0], item[1]);
-		calculate(item[0], item[1]);
+		const datearray1 = item[0].split(".");
+		const datearray2 = item[1].split(".");
+		const convertedToEuroDate1 = datearray1[1] + "." + datearray1[0] + "." + datearray1[2];
+		const convertedToEuroDate2 = datearray2[1] + "." + datearray2[0] + "." + datearray2[2];
+		calculate(convertedToEuroDate1, convertedToEuroDate2);
 	});
 }
 
 function calculate(startDate, EndDate) {
-	// To set two dates to two variables
-	const date1 = new Date("30/06/2019");
-	const date2 = new Date("30/07/2019");
-	// To calculate the time difference of two dates
-	const Difference_In_Time = date2.getTimezoneOffset() - date1.getTimezoneOffset();
-	// To calculate the no. of days between two dates
-	const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-	//To display the final no. of days (result)
-	console.log("days:" + Difference_In_Days);
+	const date1 = new Date(startDate);
+	const date2 = new Date(EndDate);
+	const differentInTime = date2.getTime() - date1.getTime();
+	const days = Math.round(differentInTime / (1000 * 3600 * 24));
+	let months = Math.floor(days / 30);
+	if (months > 12) {
+		months = Math.floor(12 / months);
+	}
+	const years = Math.floor(days / 365);
+
+	function yearMonthFormat(numberToCheck, stringToAppend) {
+		if (!numberToCheck == 0 && isFinite(numberToCheck)) {
+			return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
+		} else {
+			return "";
+		}
+	}
+
+	/*  "1 year, 3 months, total 458 days"; */
+	let endString = `${yearMonthFormat(years, "year")}${yearMonthFormat(months, "month")}total ${days} days`;
+
+	console.log("days:", days, "months:", months, "years:", years);
+	console.log(endString);
+	/* outputDate(Math.round(days)); */
 }
 
-calculate();
+loopDates(dates);
