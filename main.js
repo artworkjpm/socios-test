@@ -2,7 +2,7 @@
  * Your program must print string with the number of years and months and the total number of days between the dates.
  * Dates are provided in dd.mm.yyyy format.
  * You are not allowed to plug in JS libraries such as moment.js or date-fns directly into the code. All code need to be written in this file.
- * 
+ *
  * Result must be shown as a string in years, months and total days. If years or months are 0, then it should not be displayed in the output.
  *
  * Example:
@@ -15,20 +15,41 @@
  *
  * Output:
  * '1 year, 3 months, total 458 days'
-*/
+ */
 const dates = [
-    ['01.01.2000', '01.01.2016'],
-    ['01.01.2016', '01.08.2016'],
-    ['01.11.2015', '01.02.2017'],
-    ['17.12.2016', '16.01.2017'],
-    ['01.01.2016', '01.01.2016'],
-    ['28.02.2015', '13.04.2018'],
-    ['28.01.2015', '28.02.2015'],
-    ['17.03.2022', '17.03.2023'],
-    ['17.02.2024', '17.02.2025'],
+	["01.01.2000", "01.01.2016"],
+	["01.01.2016", "01.08.2016"],
+	["01.11.2015", "01.02.2017"],
+	["17.12.2016", "16.01.2017"],
+	["01.01.2016", "01.01.2016"],
+	["28.02.2015", "13.04.2018"],
+	["28.01.2015", "28.02.2015"],
+	["17.03.2022", "17.03.2023"],
+	["17.02.2024", "17.02.2025"],
 ];
 
 // Receive string of dates one after each other
 function outputDate(dates) {
-    return null;
+	return null;
 }
+
+function loopDates(arrayOfDates) {
+	arrayOfDates.forEach((item) => {
+		console.log(item[0], item[1]);
+		calculate(item[0], item[1]);
+	});
+}
+
+function calculate(startDate, EndDate) {
+	// To set two dates to two variables
+	const date1 = new Date("30/06/2019");
+	const date2 = new Date("30/07/2019");
+	// To calculate the time difference of two dates
+	const Difference_In_Time = date2.getTimezoneOffset() - date1.getTimezoneOffset();
+	// To calculate the no. of days between two dates
+	const Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+	//To display the final no. of days (result)
+	console.log("days:" + Difference_In_Days);
+}
+
+calculate();
