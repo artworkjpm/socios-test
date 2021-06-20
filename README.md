@@ -16,7 +16,7 @@ This was a good test for javascript, now I appreciate `moment()` even more :D !
 
 2. The first problem I had was `new Date()` did not work for the euro format of DD.MM.YYYY, so I had to change to MM.DD.YYYY, `convertEUDateToUSFormat()`.
 
-3. Once we got the milliseconds its was fairly easy to get the `days`, then figure out the `years`, and `months`.
+3. Once I got the milliseconds its was fairly easy to get the `days`, then figure out the `years`, and `months`.
 
 4. The tricky part was with the months, only showing months if more than 12, then figure out how many months minus the years, eg if we have `15 months` we need to show `1 year and 3 months`
 
