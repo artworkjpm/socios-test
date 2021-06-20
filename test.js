@@ -1,6 +1,6 @@
 function monthFormat(numberToCheck) {
 	console.log(numberToCheck);
-	if (!numberToCheck <= 0) {
+	if (numberToCheck <= 0) {
 		console.log("passed");
 	} else {
 		console.log("failed");

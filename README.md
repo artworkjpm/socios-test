@@ -12,4 +12,24 @@ This was a good test for javascript, now I appreciate `moment()` even more :D !
 
 ## Issues faced and fixed
 
-1. First
+1. To measure time between two dates we need to change the date format into a timestamp `new Date()` and then use `getTime()` to get the data as a string of milliseconds.
+
+2. The first problem I had was `new Date()` did not work for the euro format of DD.MM.YYYY, so I had to change to MM.DD.YYYY, `convertEUDateToUSFormat()`.
+
+3. Once we got the milliseconds its was fairly easy to get the `days`, then figure out the `years`, and `months`.
+
+4. The tricky part was with the months, only showing months if more than 12, then figure out how many months minus the years, eg if we have `15 months` we need to show `1 year and 3 months`
+
+5. Once I got the `endString` printing out the correct string, I saw the `outputDate()` function was iterating for each `dates` index, so I used `dates` as an argument to my main function `convertEUDateToUSFormat` and boom it works.
+
+6. I had and issue with checking minus numbers in a condition of `if number <= 0 `, so I created a test file `test.js` to help me debug this.
+
+## Time spent
+
+A little over 2 hours, 2hrs 30 mins.
+
+## End note
+
+I really enjoyed talking with Andrius Petkus and hearing the plans of chiliz and researching what you do. It impressive already and your scope for growth is very positive. I hope to get some feedback.
+
+Regards John Moran.
