@@ -30,7 +30,7 @@ A little over 2 hours, 2hrs 30 mins.
 
 ## End note
 
-I really enjoyed talking with Andrius Petkus and hearing chiliz plans, I enjoyed researching what you do and seeing that you deal with sport. Already it looks impressive and your scope for growth looks positive. I love the fact you deal with crypto currency, `Etherium`, if I'm not mistaken?, and would love to be part of team building a product that uses ths modern mindset.
+I really enjoyed talking with Andrius Petkus and hearing chiliz plans, I enjoyed researching what you do and seeing that you work with sports clubs and are trying give their fans more power in club decisions. Already it looks impressive and your scope for growth looks positive. I love the fact you deal with crypto currency, `Etherium`, if I'm not mistaken?, and would love to be part of team building a product that uses ths modern mindset.
 
 I hope to get some feedback on my test.
 
