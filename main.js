@@ -28,8 +28,6 @@ const dates = [
 	["17.02.2024", "17.02.2025"],
 ];
 
-let endArray = [];
-
 function yearFormat(numberToCheck, stringToAppend) {
 	if (!numberToCheck <= 0) {
 		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
@@ -45,21 +43,19 @@ function monthFormat(numberToCheck, stringToAppend, days) {
 	}
 }
 
-function loopDates(arrayOfDates) {
-	arrayOfDates.forEach((item) => {
-		const datearray1 = item[0].split(".");
-		const datearray2 = item[1].split(".");
-		const convertedToUSDateFormat1 = datearray1[1] + "." + datearray1[0] + "." + datearray1[2];
-		const convertedToUSDateFormat2 = datearray2[1] + "." + datearray2[0] + "." + datearray2[2];
-		calculate(convertedToUSDateFormat1, convertedToUSDateFormat2);
-	});
+function convertEUDateToUSFormat(item) {
+	const datearray1 = item[0].split(".");
+	const datearray2 = item[1].split(".");
+	const convertedToUSDateFormat1 = datearray1[1] + "." + datearray1[0] + "." + datearray1[2];
+	const convertedToUSDateFormat2 = datearray2[1] + "." + datearray2[0] + "." + datearray2[2];
+	return calculateTime(convertedToUSDateFormat1, convertedToUSDateFormat2);
 }
 
-function calculate(startDate, EndDate) {
+function calculateTime(startDate, EndDate) {
 	const date1 = new Date(startDate);
 	const date2 = new Date(EndDate);
-	const differentInTime = date2.getTime() - date1.getTime();
-	const days = Math.round(differentInTime / (1000 * 3600 * 24));
+	const differenceInTime = date2.getTime() - date1.getTime();
+	const days = Math.round(differenceInTime / (1000 * 3600 * 24));
 	const years = Math.floor(days / 365);
 	let months = Math.round(days / 31);
 	if (months >= 12) {
@@ -67,14 +63,10 @@ function calculate(startDate, EndDate) {
 		months = months - getYears;
 	}
 	let endString = `${yearFormat(years, "year")}${monthFormat(months, "month", days)}total ${days} days`;
-	endArray.push(endString);
 	return endString;
 }
 
-loopDates(dates);
-
 // Receive string of dates one after each other
-function outputDate(dates, num) {
-	console.log(num);
-	return endArray[num - 1];
+function outputDate(dates) {
+	return convertEUDateToUSFormat(dates);
 }
