@@ -30,6 +30,8 @@ A little over 2 hours, 2hrs 30 mins.
 
 ## End note
 
-I really enjoyed talking with Andrius Petkus and hearing the plans of chiliz and researching what you do. It impressive already and your scope for growth is very positive. I hope to get some feedback.
+I really enjoyed talking with Andrius Petkus and hearing the plans of chiliz and researching what you do. Already it looks impressive and your scope for growth is looks extremly positive. I love the fact you deal with crypto currency, `Etherium`, if I'm not mistaken?, and would love to be part of team building a product that uses a modern mindset like this.
+
+I hope to get some feedback on my test.
 
 Regards John Moran.
