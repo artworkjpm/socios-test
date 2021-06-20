@@ -28,10 +28,8 @@ const dates = [
 	["17.02.2024", "17.02.2025"],
 ];
 
-// Receive string of dates one after each other
-function outputDate(dates) {
-	return null;
-}
+let endArray = [];
+
 function yearFormat(numberToCheck, stringToAppend) {
 	if (!numberToCheck <= 0) {
 		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
@@ -39,10 +37,9 @@ function yearFormat(numberToCheck, stringToAppend) {
 		return "";
 	}
 }
-function monthFormat(numberToCheck, stringToAppend) {
-	if (numberToCheck <= 0) {
+function monthFormat(numberToCheck, stringToAppend, days) {
+	if (numberToCheck <= 0 || days < 31) {
 		return "";
-		/* console.log(numberToCheck); */
 	} else {
 		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
 	}
@@ -59,28 +56,25 @@ function loopDates(arrayOfDates) {
 }
 
 function calculate(startDate, EndDate) {
-	/* console.log(startDate, EndDate); */
 	const date1 = new Date(startDate);
 	const date2 = new Date(EndDate);
 	const differentInTime = date2.getTime() - date1.getTime();
 	const days = Math.round(differentInTime / (1000 * 3600 * 24));
-
 	const years = Math.floor(days / 365);
 	let months = Math.round(days / 31);
 	if (months >= 12) {
 		let getYears = 12 * years;
 		months = months - getYears;
-		/* console.log(months); */
 	}
-
-	/*  "1 year, 3 months, total 458 days"; */
-
-	/* console.log(months); */
-	let endString = `${yearFormat(years, "year")}${monthFormat(months, "month")}total ${days} days -- Months: ${months}`;
-
-	/* console.log("years:", years, "months:", months, "days:", days); */
-	return console.log(endString);
-	/* outputDate(Math.round(days)); */
+	let endString = `${yearFormat(years, "year")}${monthFormat(months, "month", days)}total ${days} days`;
+	endArray.push(endString);
+	return endString;
 }
 
 loopDates(dates);
+
+// Receive string of dates one after each other
+function outputDate(dates, num) {
+	console.log(num);
+	return endArray[num - 1];
+}

@@ -2,9 +2,8 @@ const correctAnswers = ["16 years, total 5844 days", "7 months, total 213 days",
 let results = "";
 
 for (let oneDate in dates) {
-	const value = outputDate(dates[oneDate]);
 	const num = parseInt(oneDate) + 1;
-
+	const value = outputDate(dates[oneDate], num);
 	const answer = value === correctAnswers[oneDate] ? '<span style="color: #090">Correct</span>' : `<span style="color: #900">Incorrect</span>, correct is "${correctAnswers[oneDate]}"`;
 
 	results += `${num} value: ${value} is ${answer}<br>`;
