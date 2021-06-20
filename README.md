@@ -5,3 +5,11 @@ You only need to work in main.js file, inside of the function outputDate();
 Please set up timer. And afterwards specify how much time it took you to finish the task.
 
 After the tasks are finished, create either gist on github of main.js and send the link or archive all files and send them back to us.
+
+### Explanation of code from John
+
+This was a good test for javascript, now I appreciate `moment()` even more :D !
+
+## Issues faced and fixed
+
+1. First
