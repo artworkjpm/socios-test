@@ -52,7 +52,8 @@ function calculateTime(startDate, EndDate) {
 }
 
 function yearFormat(numberToCheck, stringToAppend) {
-	if (!numberToCheck <= 0) {
+	console.log(numberToCheck);
+	if (!numberToCheck == 0) {
 		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
 	} else {
 		return "";
