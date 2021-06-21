@@ -47,12 +47,11 @@ function calculateTime(startDate, EndDate) {
 		let getYears = 12 * years;
 		months = months - getYears;
 	}
-	let endString = `${yearFormat(years, "year")}${monthFormat(months, "month", days)}total ${days} days`;
+	const endString = `${yearFormat(years, "year")}${monthFormat(months, "month", days)}total ${days} days`;
 	return endString;
 }
 
 function yearFormat(numberToCheck, stringToAppend) {
-	console.log(numberToCheck);
 	if (!numberToCheck == 0) {
 		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
 	} else {
