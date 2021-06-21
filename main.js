@@ -28,21 +28,6 @@ const dates = [
 	["17.02.2024", "17.02.2025"],
 ];
 
-function yearFormat(numberToCheck, stringToAppend) {
-	if (!numberToCheck <= 0) {
-		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
-	} else {
-		return "";
-	}
-}
-function monthFormat(numberToCheck, stringToAppend, days) {
-	if (numberToCheck <= 0 || days < 31) {
-		return "";
-	} else {
-		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
-	}
-}
-
 function convertEUDateToUSFormat(item) {
 	const datearray1 = item[0].split(".");
 	const datearray2 = item[1].split(".");
@@ -64,6 +49,21 @@ function calculateTime(startDate, EndDate) {
 	}
 	let endString = `${yearFormat(years, "year")}${monthFormat(months, "month", days)}total ${days} days`;
 	return endString;
+}
+
+function yearFormat(numberToCheck, stringToAppend) {
+	if (!numberToCheck <= 0) {
+		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
+	} else {
+		return "";
+	}
+}
+function monthFormat(numberToCheck, stringToAppend, days) {
+	if (numberToCheck <= 0 || days < 31) {
+		return "";
+	} else {
+		return numberToCheck > 1 ? `${numberToCheck} ${stringToAppend}s, ` : `${numberToCheck} ${stringToAppend}, `;
+	}
 }
 
 // Receive string of dates one after each other
